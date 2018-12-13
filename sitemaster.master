@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="sitemaster.master.cs" Inherits="MasterPag" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>IETAA</title>
+        <link rel="Shortcut icon" href="images/slid/title.jpg" />
+    <script src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#animateimg,#animateimg1,#animateimg3').on({
+                mouseover: function () {
+                    $(this).animate({
+                        'height': 45,
+                        'width': 45
+                    }, 150);
+                },
+                mouseout: function () {
+                    $(this).animate({
+                        'height': 40,
+                        'width': 40
+                    }, 150);
+                }
+            });
+        });
+       
+        $(document).ready(function () {
+            $('#animateimg2').on({
+                mouseover: function () {
+                    $(this).animate({
+                        'height': 45,
+                        'width': 65
+                    }, 150);
+                },
+                mouseout: function () {
+                    $(this).animate({
+                        'height': 40,
+                        'width': 60
+                    }, 150);
+                }
+            });
+        });
+        
+        $(document).ready(function () {
+            $('#animateimg4').on({
+                mouseover: function () {
+                    $(this).animate({
+                        'height':90,
+                        'width': 100
+                    }, 150);
+                },
+                mouseout: function () {
+                    $(this).animate({
+                        'height': 85,
+                        'width': 90
+                    }, 150);
+                }
+            });
+        });
+  </script>
+    <script>
+        var image = ["1.jpg","2.jpg"];
+        var imgno = 0;
+        function slider()
+        {
+            var myimage = document.getElementById("imgslide");
+            myimage.src = "images/slid/" + image[imgno];
+            imgno++;
+            if (imgno == image.length)
+                imgno = 0;
+            window.setTimeout("slider()", 900);
+        }
+        var im = ["2.jpg", "1.jpg"];
+        var no = 0;
+        function slide()
+        {
+            var myimage = document.getElementById("img");
+            myimage.src = "images/slid/" + im[no];
+            no++;
+            if (no == im.length)
+                no = 0;
+            window.setTimeout("slide()", 900);
+        }
+    </script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/sitemasterstyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="slider();slide()">
+    <form id="form1" runat="server">
+    <div id="outer">
+        <div id="container">
+            <div id="header">
+                <div id="logo"><img src="images/slid/logo.jpg" 100px" style="height: 128px; width: 130px; border-radius:62px;" /></div>
+                <div id="title">Institute of Engineering and Technology
+                    <br />
+                    Alumni Association<br />(IETAA)
+                    </div>
+            </div>
+            <div id="menu">
+                <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Photo Gallery" Value="Photo Gallery" NavigateUrl="~/gallery.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Become member" Value="Become member" NavigateUrl="~/registration.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Contact us" Value="Contact us" NavigateUrl="~/contactus.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/login.aspx"></asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#CCFF66" ForeColor="Red" />
+                    <StaticMenuItemStyle Font-Bold="True" Font-Italic="True" Font-Size="X-Large" Font-Underline="False" HorizontalPadding="30px" VerticalPadding="10px" Font-Overline="False" />
+                </asp:Menu>
+            </div>
+            <div id="slider">
+                <div id="left"><img id="imgslide" style="border-style: groove; border-color: inherit; border-width:4px; width: 425px; height: 232px; margin-bottom: 0px;"/></div>
+                <div id="right"><img id="img" width="440px" style="border-style: groove; border-color: inherit; border-width:4px; height: 232px; margin-left: 16px;"/></div>
+            </div>
+            <div id="main">
+                <asp:ContentPlaceHolder ID="Cphmain" runat="server">
+                  </asp:ContentPlaceHolder>
+            </div>
+            <div id="footer">
+                <div id="lfooter" class="foot"><br />
+                   <a href="http://www.facebook.com/" target="_blank"> <img src="images/face.png" height="40px" width="40px" style="border-radius:10px;" id="animateimg3" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="http://www.gmail.com" target="_blank">  <img src="images/gmail.jpg" height="40px" width="40px"  style="border-radius:10px;" id="animateimg"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="http://www.twitter.com/" target="_blank">  <img src="images/twit.png" height="40px" width="40px" style="border-radius:10px;"  id="animateimg1"/></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://www.youtube.com/" target="_blank">    <img src="images/you.png" height="40px" width="60px" style="border-radius:10px;" id="animateimg2"  /></a>
+                    <a href="http://web.whatsapp.com" target="_blank">    <img src="images/what.png" height="40px" width="40px" style="border-radius:10px;" id="animateimg2"  /></a>
+
+                </div>
+                <div id="rfooter" class="foot">
+                    <div id="des"><br /><span style="font-size:10px">College: IET,LUCKNOW</span>
+                    <br />
+                        Group members: Ragini singh, Prashant Anand, Pramod Kumar, Shantpreet singh chandel</div>
+                    <div id="pic"><img id="animateimg4" src="images/slid/1.jpg" height="85px" width="90px"</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </form>
+</body>
+</html>

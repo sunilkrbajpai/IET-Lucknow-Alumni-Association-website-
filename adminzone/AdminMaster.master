@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="adminzone_AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Admin Zone</title>            <link href="../css/adminzonestyle.css" rel="stylesheet" />
+        <link rel="Shortcut icon" href="../images/slid/logo.jpg" />
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="outer">
+        <div id="header">
+        <div id="logo"><img src="../images/slid/logo.jpg" width="160px" height="150px" style="border-radius:30px;"/></div>
+            <div id="title" style="border-radius:30px;">Institute of Engineering & Technology<br />Alumni Association <br />(IETAA)
+</div></div>
+        </div>
+        <div id="menu">
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                <DynamicHoverStyle BackColor="Yellow" ForeColor="Red" />
+                <DynamicMenuItemStyle BackColor="#FFCC00" Font-Bold="True" Font-Size="X-Large" ForeColor="Navy" HorizontalPadding="15px" VerticalPadding="5px" />
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/adminzone/AdminHome.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                    <asp:MenuItem Text="Alumni" Value="Alumni">
+                        <asp:MenuItem NavigateUrl="~/adminzone/AlumniProfile.aspx" Text="Alumni Profile" Value="Alumni Profile"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/adminzone/DiscussionManagement.aspx" Text="Discussion Board" Value="Discussion Board"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Response Management" Value="Response Management">
+                        <asp:MenuItem NavigateUrl="~/adminzone/ContactUsManagement.aspx" Text="Contact Us Management" Value="Contact Us Management"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/adminzone/feedbackmanagemant.aspx" Text="Feedback Management" Value="Feedback Management"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/adminzone/loginInfo.aspx" Text="Login info" Value="Login info"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/adminzone/Notification.aspx" Text="Notification" Value="Notification"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/adminzone/Donation.aspx" Text="Donation" Value="Donation"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/adminzone/sendsms.aspx" Text="Send SMS" Value="Send SMS"></asp:MenuItem>
+                    <asp:MenuItem Text="Settings" Value="Settings">
+                        <asp:MenuItem NavigateUrl="~/adminzone/changepass.aspx" Text="Change Password" Value="Change Password"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/adminzone/logout.aspx" Text="Logout" Value="Logout"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+                <StaticHoverStyle BackColor="White" ForeColor="#FF6600" />
+                <StaticMenuItemStyle Font-Size="X-Large" ForeColor="Black" HorizontalPadding="10px" VerticalPadding="15px" />
+                <StaticMenuStyle HorizontalPadding="30px" />
+            </asp:Menu>
+        </div>
+        <div id="slider"><embed src="../images/IET.jpg" width="100%" height="250px"/></div>
+        <div id="main">
+            <div id="heading">
+                <%--<marquee scroldelay="200" width="20px">>>></marquee>--%>
+                <asp:ContentPlaceHolder ID="Cphheading" runat="server"></asp:ContentPlaceHolder>
+             <%--<marquee direction="right" scroldelay="200" width="20px"><<<</marquee>--%>
+            </div>
+            <div id="content"><asp:ContentPlaceHolder ID="Cphcontent" runat="server"></asp:ContentPlaceHolder></div>
+        </div>
+        <div id="footer">
+             <div class="foot"><span style="text-decoration:underline;color:cornflowerblue">Group members:</span> Ragini singh, Prashant Anand, Pramod Kumar, <br />Shantpreet singh Chandel</div>
+            <div class="foot"><span style="color:darkgreen;font-weight:bold;text-decoration:underline;">Institute of Engineering & Technology </span></div></div>
+    </div>
+    </form>
+</body>
+</html>

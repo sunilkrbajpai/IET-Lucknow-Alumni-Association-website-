@@ -1,0 +1,23 @@
+﻿#box
+{
+  width:860px;
+  padding:10px 20px 10px 20px;
+  height:430px;
+    font-size: medium;
+    
+    font-style: italic;
+  background:white; 
+        border-radius:25px;
+}
+textarea
+{
+    resize:none;
+     border-radius:0px 15px;
+    padding-left:4px;
+}
+input
+{
+    border-radius:0px 15px;
+    padding-left:4px;
+
+}

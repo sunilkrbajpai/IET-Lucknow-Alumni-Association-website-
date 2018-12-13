@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="userzone.master.cs" Inherits="UserZone_userzone" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+        <link rel="Shortcut icon" href="../images/slid/title.jpg" />
+    <title>User Zone</title>
+    <link href="../css/userzoneStyle.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="outer">
+        <div id="header">
+            <div id="logo"><img src="../images/slid/logo.jpg" width-"200px" height="200px" style="width: 200px;border-radius:30px;"/></div>
+            <div id="title">Institute of Engineering & technology <br />Alumni Association 
+                    <br />(IETAA)
+                    </div>
+        </div>
+        <div id="menu">
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                <DynamicHoverStyle BackColor="White" ForeColor="Red" />
+                <DynamicMenuItemStyle BackColor="#99CCFF" Font-Bold="True" Font-Italic="True" Font-Size="Large" HorizontalPadding="4px" VerticalPadding="6px" BorderColor="#FF3300" BorderStyle="Groove" ForeColor="Blue" />
+                <Items>
+                    <asp:MenuItem Text="HOME" Value="HOME" NavigateUrl="~/UserZone/Home.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Discuss" Value="Discuss" NavigateUrl="~/UserZone/Discussion.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="News And Updates" Value="News And Updates" NavigateUrl="~/UserZone/Newsupdates.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Donate Us" Value="Donate Us" NavigateUrl="~/UserZone/Donateus.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Feedback" Value="Feedback" NavigateUrl="~/UserZone/Feedback.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Settings" Value="Settings">
+                        <asp:MenuItem Text="My Profile" Value="My Profile" NavigateUrl="~/UserZone/profile.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Change password" Value="Change password" NavigateUrl="~/UserZone/changepass.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Logout" Value="Logout" NavigateUrl="~/UserZone/logout.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+                <StaticHoverStyle BackColor="LightGreen" ForeColor="Navy" />
+                <StaticMenuItemStyle  Font-Bold="True" Font-Italic="True" Font-Size="18pt" Font-Underline="False" HorizontalPadding="30px" VerticalPadding="15px" BackColor="White" ForeColor="Blue" />
+                <StaticMenuStyle HorizontalPadding="0px" />
+            </asp:Menu>
+        </div>
+       
+<div id="main">
+    <div id="heading"><marquee width="70px" scrolldelay="200"><<<</marquee>
+    <asp:ContentPlaceHolder ID="Cphheading" runat="server"></asp:ContentPlaceHolder><marquee width="70px" direction="right" scrolldelay="200">>>></marquee>
+        </div>
+    <div id="pro"><asp:Label ID="lbltext" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="#FF0066"></asp:Label><br /><asp:Label ID="lbluser" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Large" Font-Underline="True" ForeColor="Black"></asp:Label><br /><asp:Image runat="server" ID="imgpro" width="59px" Height="53px"/></div>
+   <div id="con" style="text-align:center;margin:0px auto ;"> 
+       
+    <asp:ContentPlaceHolder ID="Cphmain" runat="server"></asp:ContentPlaceHolder>
+   
+     </div>
+
+
+
+</div>
+        <div id="footer" style="background-color:#000000;" title="HOME">
+            <div class="foot">Group members: Ragini singh, Prashant Anand, Pramod Kumar, Shantpreet singh Chandel</div>
+            <div class="foot"><span style="color:darkgoldenrod;">IET Lucknow</span></div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
